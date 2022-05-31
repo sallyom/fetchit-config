@@ -1,0 +1,18 @@
+configReload:
+  configUrl: https://raw.githubusercontent.com/sallyom/fetchit-config/main/config.yaml
+  schedule: "*/2 * * * *"
+targetConfigs:
+- name: fetchit
+  url: https://github.com/sallyom/fetchit
+  fileTransfer:
+  - name: ft-ex
+    targetPath: examples/filetransfer
+    destinationDirectory: /tmp/filetransfer
+    schedule: "*/1 * * * *"
+  systemd:
+  - name: sysd-ex
+    targetPath: examples/systemd/httpd
+    root: false
+    enable: true
+    schedule: "*/1 * * * *"
+  branch: example

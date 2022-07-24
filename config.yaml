@@ -2,12 +2,12 @@ configReload:
   configUrl: https://raw.githubusercontent.com/sallyom/fetchit-config/main/config.yaml
   schedule: "*/2 * * * *"
 targetConfigs:
-- name: fetchit
-  url: https://github.com/sallyom/fetchit
+- name: example
+  url: https://github.com/sallyom/fetchit-config
   trackBadCommits: true
   fileTransfer:
-  - name: ft-ex
-    targetPath: examples/filetransfer
+  - name: hello
+    targetPath: filetransfer
     destinationDirectory: /tmp/filetransfer
     schedule: "*/1 * * * *"
   branch: main

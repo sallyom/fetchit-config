@@ -1,9 +1,0 @@
-- name: example
-  url: https://github.com/sallyom/fetchit-config
-  trackBadCommits: true
-  fileTransfer:
-  - name: hello
-    targetPath: filetransfer
-    destinationDirectory: /tmp/filetransfer
-    schedule: "*/1 * * * *"
-  branch: main

@@ -1,13 +1,28 @@
-configReload:
-  configUrl: https://raw.githubusercontent.com/sallyom/fetchit-config/main/config.yaml
-  schedule: "*/2 * * * *"
+prune:
+  All: true
+  Volumes: false
+  schedule: "*/1 * * * *"
 targetConfigs:
-- name: example
-  url: https://github.com/sallyom/fetchit-config
-  trackBadCommits: true
-  fileTransfer:
-  - name: hello
-    targetPath: filetransfer
-    destinationDirectory: /tmp/filetransfer
+- url: http://github.com/containers/fetchit
+  raw:
+  - name: raw-ex
+    targetPath: examples/raw
+    schedule: "*/1 * * * *"
+    pullImage: false
+  systemd:
+  - name: sysd-ex
+    targetPath: examples/systemd
+    root: true
+    enable: false
+    schedule: "*/1 * * * *"
+  ansible:
+  - name: ans-ex
+    targetPath: examples/ansible
+    sshDirectory: /root/.ssh
+    schedule: "*/1 * * * *"
+  filetransfer:
+  - name: ft-ex
+    targetPath: examples/filetransfer
+    destinationDirectory: /tmp/ft
     schedule: "*/1 * * * *"
   branch: main
